@@ -1,0 +1,28 @@
+# Change CLIENT to the client name and
+# the correct .htpassword path
+# SetEnvIf Host CLIENT.cinco.io passreq
+# SetEnvIf Host CLIENT.dev.cinco.io passreq
+# AuthType Basic
+# AuthName "Password Required"
+# AuthUserFile /srv/auth/.htpassword-CLIENT
+# Require valid-user
+# Order allow,deny
+# Allow from all
+# Deny from env=passreq
+# Satisfy any
+
+
+# Maintenance
+# RewriteCond %{REMOTE_ADDR} !^75\.148\.91\.17$
+# RewriteCond %{REQUEST_URI} !/maintenance/?$ [NC]
+# RewriteRule ^(.*)$ /maintenance [R=307,L]
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Send would-be 404 requests to Craft
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
+    RewriteRule (.+) index.php?p=$1 [QSA,L]
+</IfModule>

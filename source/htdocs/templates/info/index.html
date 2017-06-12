@@ -1,0 +1,75 @@
+{% extends "_layout" %} {% block content %}
+<div class="info-page">
+  <div class="transition"></div>
+  <head>
+    <a href="/" class="h4 site-title">hanour.</a>
+    <a href="#" class="hamburger">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+    </a>
+  </head>
+  <div class="main-content">
+    <section class="intro-img-section right-img wrap padding-x-xs-0 overflow-x-hidden padding-top-xs-4x">
+      <div class="row">
+        <div class="text-content col-xs-10 offset-xs-1 col-md-2 offset-md-1 align-top-xs padding-bottom-xs-2x">
+          <h5 class="h4 fixed-underscore">bio</h5>
+        </div>
+        <div class="col-xs-10 offset-xs-1 col-md-9 offset-md-0 align-middle-xs">
+          <div class="first-wipe">
+            {% set portrait = entry.portrait.first() %}
+            {% if portrait %}
+              <img data-src="{{ portrait.getUrl }}" src="{{ portrait.getUrl }}" alt="">
+            {% else %}
+              <img data-src="/img/ph/p_2.jpg" src="/img/ph/p_2.jpg" alt="">
+            {% endif %}
+          </div>
+          <div class="row">
+            <div class="text-content col-xs-12 col-md-10 col-lg-8 col-xl-7">
+              <div class="margin-top-xs-4x">
+                {{ entry.body }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="press wrap padding-x-xs-0 overflow-x-hidden lazy-load" id="press">
+      <div class="row">
+        <div class="text-only-content col-xs-10 offset-xs-1 col-md-2 offset-md-1 align-top-xs padding-bottom-xs-2x">
+          <h5 class="h4 fixed-underscore">press</h5>
+        </div>
+        <div class="text-only-content col-xs-10 offset-xs-1 col-md-9 offset-md-0 align-middle-xs">
+          {% for block in entry.press %}
+            <ul>
+              <li>
+                <a href="{{ block.articleLink }}" target="_blank">
+                  <span class="date font-xs">{{ block.articleDate }}</span>
+                  <span class="title p">{{ block.articleTitle }}</span>
+                </a>
+              </li>
+            </ul>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-module lazy-load wrap padding-x-xs-0 overflow-x-hidden">
+      <div class="row text-only-content">
+        <div class="col-xs-10 offset-xs-1 col-md-2 offset-md-1 align-top-xs padding-bottom-xs-2x">
+          <h5 class="h4 fixed-underscore">contact</h5>
+        </div>
+        <div class="col-xs-10 offset-xs-1 col-md-9 offset-md-0 align-middle-xs">
+          <ul>
+            <li class="h4 margin-bottom-xs-2x">commercial (global)</li>
+            {% for block in contact.commercial %}
+              <li class="h4 light-weight">{{ block.lineItem }}</li>
+            {% endfor %}
+            <li class="h4 margin-top-xs-2x">direct</li>
+            <li class="p"><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  {% endblock %}

@@ -1,0 +1,57 @@
+/*
+  Font settings
+  - SVG fonts need #font_id from <font> tag
+*/
+
+@font-face {
+  font-family: 'NeutraText-Light';
+  src: url('/fonts/neutra/NeutraText-Light.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/neutra/NeutraText-Light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/neutra/NeutraText-Light.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'NeutraText-Book';
+  src: url('/fonts/neutra/NeutraText-Book.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/neutra/NeutraText-Book.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/neutra/NeutraText-Book.ttf')  format('truetype'); /* Safari, Android, iOS */
+
+}
+
+@font-face {
+  font-family: 'NeutraText-Bold';
+  src: url('/fonts/neutra/NeutraText-Bold.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/neutra/NeutraText-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/neutra/NeutraText-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+
+@mixin font() {
+  font-family: 'NeutraText-Light', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin regular-font() {
+  font-family: 'NeutraText-Book', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin italic-font() {
+  font-family: 'NeutraText-Book', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@mixin bold-font() {
+  font-family: 'NeutraText-Bold', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin black-font() {
+  font-family: 'NeutraText-Bold', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}

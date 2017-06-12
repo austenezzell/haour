@@ -1,0 +1,87 @@
+/*
+  Place styles specific to the Portfolio Page in here.
+*/
+.info-page {
+  #work {
+    position: relative;
+    padding: $base-spacing * 8 0 0;
+  }
+  .section-change {
+    background: $warm-cool;
+    transition: all, 1s;
+    position: relative;
+  }
+  .to-white {
+    position: absolute;
+    background-color: rgba(white,0);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color, 1s;
+    &.on {
+      background-color: rgba(white,1);
+    }
+  }
+}
+.intro-img-section {
+  padding: 240px 0;
+}
+
+.press {
+  margin-bottom: $base-spacing * 8;
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      padding: 0;
+      margin-bottom: $base-spacing * 1;
+      a {
+        display: block;
+        // border-bottom: 1px solid white;
+        padding-bottom: $base-spacing;
+        span.title {
+          position: relative;
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            z-index: -1;
+            height: 2px;
+            background: #000;
+            transition: width .4s;
+          }
+        }
+        span.date {
+          display: block;
+          margin-bottom: $base-spacing / 2;
+          color: darken($color-gray, 10%);
+        }
+        &:hover {
+          text-decoration: none;
+          span.title {
+            &:before {
+              width: 100%;
+            }
+          }
+          span.date {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-module {
+  padding-bottom: $base-spacing * 8;
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.form__control,
+.form__select,
+.btn {
+  -webkit-appearance: none;
+  color: inherit;
+  background-color: var(--transparent);
+  background-clip: padding-box;
+  font-size: 1em;
+  font-family: inherit;
+  line-height: normal;
+  position: relative;
+  text-transform: none;
+  margin: 0;
+  box-shadow: var(--shadow);
+}
+
+.form__control:hover,
+.form__select:hover,
+.form__control:focus,
+.form__select:focus,
+.btn:focus,
+.btn:hover {
+  outline: 0;
+  text-decoration: none;
+  border-color: rgba(0,0,0,0.3);
+  box-shadow: var(--shadow_2x), inset 0 0 0 100px var(--tint);
+}
+
+.btn + .btn,
+.form__control + .btn {
+  margin-left: 5px;
+}
+
+.btn.pull-right + .btn.pull-right {
+  margin-right: 5px;
+}

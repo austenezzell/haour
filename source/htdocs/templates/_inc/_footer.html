@@ -1,0 +1,56 @@
+
+    <div class="hidden-nav wrap">
+      <nav>
+        <div class="row vh-full">
+          <div class="col-xs-10 offset-xs-1 align-middle-xs">
+            <div class="primary-nav">
+              {% include '_inc/_primary-nav-items' %}
+            </div>
+            <div class="social-nav">
+              {% include '_inc/_social-nav-items' %}
+            </div>
+          </div>
+          <a href="/" class="hamburger-site-title h4">hanour.</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="wrap full-height footer-nav">
+      <div class="row full-height">
+        <div class="section-bg"></div>
+        <div class="col-xs-10 offset-xs-1">
+          <div class="row footer-content">
+            <div class="col-xs-12 col-md-4 align-bottom-xs">
+              <a href="/" class="h4 margin-all-xs-0 footer-title">hanour.</a>
+            </div>
+            <div class="col-xs-12 col-md-4 align-bottom-xs">
+              <p class="font-xs margin-all-xs-0 text-xs-left text-md-center">© {{ "now"|date("Y") }} Travis Hanour. All Rights Reserved.</p>
+            </div>
+            <div class="order-first-xs order-last-md col-xs-12 col-md-4 align-bottom-xs">
+              <div class="primary-nav">
+                {% include '_inc/_primary-nav-items' %}
+              </div>
+              <div class="social-nav">
+                {% include '_inc/_social-nav-items' %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+
+    <!-- build:js /js/scripts.js -->
+    <!-- bower:js -->
+    <!-- endinject -->
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>

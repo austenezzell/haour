@@ -1,0 +1,181 @@
+@include font();
+
+:root {
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: none;
+  box-sizing: border-box!important;
+  @include font-size(sm);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  @include regular-font();
+  color: black;
+  background: white;
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+.main-content {
+  margin-bottom: 634px;
+  z-index: 2;
+  position: relative;
+  background: white;
+  canvas {
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: -5;
+  }
+}
+
+.section-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.lazy-load {
+  opacity: 0;
+}
+
+.first-wipe {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    background: $gray-gradient;
+    z-index: 999;
+    animation: wipe 1s ease forwards;
+    animation-delay: .7s;
+  }
+  img, video {
+    opacity: 0;
+    animation: fade-in .6s ease forwards;
+    animation-delay: 1s;
+  }
+}
+
+.wipe {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    transform: translateY(200%);
+    background: $gray-gradient;
+    z-index: 999;
+  }
+  img, video {
+    opacity: 0;
+  }
+}
+
+.animate-in {
+  opacity: 1;
+  .client {
+    pointer-events: none;
+    h3 {
+      animation: translate-up-100 .5s ease forwards;
+      animation-delay: 1s;
+    }
+  }
+  .wipe {
+    font-size: 0;
+    overflow: hidden;
+    &:before {
+      animation: wipe 2.2s ease forwards;
+      animation-delay: .4s;
+    }
+    img, video {
+      animation: fade-in 1.1s ease forwards;
+      animation-delay: 1s;
+    }
+  }
+  .text-content {
+    h5 {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.5s;
+    }
+    h2 {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.4s;
+    }
+    p {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.6s;
+    }
+    button {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.7s;
+    }
+  }
+  .text-only-content {
+    opacity: 0;
+    animation: fade-up 1.5s ease forwards;
+    animation-delay: .4s;
+  }
+}
+.work-page, .info-page {
+  .transition {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    background: $gray-gradient;
+    position: fixed;
+    animation: fade-out 2s ease forwards;
+    pointer-events: none;
+    animation-delay: .5s;
+  }
+  .transition.nextProject {
+    width: 0%;
+    animation: width-full .4s ease forwards;
+    opacity: 1;
+    background: $gray-gradient;
+  }
+}
+.home-page {
+  .transition {
+    background: $gray-gradient;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: 9999;
+    transition: width .3s;
+  }
+}
+.home-transitioning {
+  .transition {
+    width: 100%;
+  }
+}

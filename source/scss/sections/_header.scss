@@ -1,0 +1,90 @@
+/*
+  Header styles
+*/
+
+.gradient-img {
+  display: none;
+}
+
+.activeNav {
+  .site-title {
+    z-index: 1;
+  }
+}
+.site-title {
+  position: absolute;
+  mix-blend-mode: difference;
+  color: white;
+  top: 64px;
+  left: 8.33333%;
+  z-index: 3;
+  &:hover {
+    text-decoration: none;
+  }
+}
+a.hamburger {
+  position: fixed;
+  // background: rgba(white,1);
+  top: 52px;
+  right: 8.33333%;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+  padding: 10px;
+  margin-right: 2px;
+  .line {
+    height: 2px;
+    width: 30px;
+    background: black;
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    transition: all, .2s;
+  }
+  .line-2 {
+    top: 30px;
+  }
+}
+
+.work-page {
+  a.hamburger {
+    // background: rgba(white,0);
+    .line {
+      width: 0;
+    }
+  }
+  a.hamburger.on {
+    // animation: to-white .4s ease forwards;
+    .line {
+      width: 30px;
+    }
+  }
+}
+
+.home-page {
+  a.hamburger {
+    // background: rgba(white,0);
+    // animation: to-white .4s ease forwards;
+    // animation-delay: 3s;
+    .line {
+      width: 0;
+      animation: nav-full-width .4s ease forwards;
+      animation-delay: 2s;
+    }
+  }
+}
+
+.activeNav {
+  a.hamburger {
+    animation: to-white .4s ease forwards;
+    animation-delay: 3s;
+    .line-1 {
+      transform: rotate(45deg);
+      top: 25px;
+    }
+    .line-2 {
+      transform: rotate(-45deg);
+      top: 25px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{% extends "_layout" %} {% block content %}
+<div class="contact-page">
+  <head>
+    <a href="/" class="h4 site-title">hanour.</a>
+    <a href="#" class="hamburger">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+    </a>
+  </head>
+  <div class="main-content">
+    <section class="contact-module wrap padding-x-xs-0 overflow-x-hidden padding-top-xs-4x">
+      <div class="row">
+        <div class=" col-xs-10 offset-xs-1 col-md-2 offset-md-1 align-top-xs">
+          <h5 class="h4 fixed-underscore">contact</h5>
+        </div>
+        <div class="order-first-xs order-last-md col-xs-10 offset-xs-1 col-md-9 offset-md-0 align-middle-xs">
+          <ul>
+            <li class="h4 margin-bottom-xs-2x">commercial (global)</li>
+            {% for block in contact.commercial %}
+              <li class="h2 margin-bottom-xs-0x light-weight">{{ block.lineItem }}</li>
+            {% endfor %}
+            <li class="h4 margin-bottom-xs-2x margin-top-xs-4x">direct</li>
+            <li class="h2 light-weight"><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  {% endblock %}

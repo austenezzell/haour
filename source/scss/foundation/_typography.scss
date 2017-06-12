@@ -1,0 +1,57 @@
+.font-xxl {
+  @include font-size(xl);
+  @include breakpoint(sm){
+    @include font-size(xxl);
+  }
+}
+
+h1, .h1, .font-xl {
+  @include font-size(lg);
+  font-weight: 700;
+  font-family: 'NeutraText-Bold';
+  @include breakpoint(sm){
+    @include font-size(xl);
+  }
+}
+
+h2, .h2, .font-lg {
+  @include font-size(md);
+  font-weight: 700;
+  font-family: 'NeutraText-Bold';
+  @include breakpoint(sm){
+    @include font-size(lg);
+  }
+}
+
+h3, .h3, .font-md {
+  @include font-size(md);
+  font-weight: 700;
+  font-family: 'NeutraText-Bold';
+}
+
+h4, .h4, .font-sm {
+  @include font-size(sm);
+  font-weight: 700;
+  font-family: 'NeutraText-Bold';
+}
+
+h5, .h5, .font-xs {
+  @include font-size(xs);
+  font-weight: 400;
+}
+
+p, .p {
+  @include font-size(sm);
+  line-height: $body-line-height;
+  font-weight: 400;
+}
+
+.intro-text {
+  @include font-size(md);
+  font-weight: 400;
+}
+
+.light-weight {
+  font-family: 'NeutraText-Book';
+  font-weight: 400!important;
+}

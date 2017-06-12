@@ -1,0 +1,91 @@
+/*
+  Reusable bits of code
+*/
+
+// Mixins
+@mixin breakpoint($class) {
+  // 'xs' (< 544px) is default
+  @if $class == xs {
+     @content;
+  }
+
+  @else if $class == sm {
+    @media (min-width: map_get($grid-breakpoints, sm)) { @content; }
+  }
+
+  @else if $class == md {
+    @media (min-width: map_get($grid-breakpoints, md)) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (min-width: map_get($grid-breakpoints, lg)) { @content; }
+  }
+
+  @else if $class == xl {
+    @media (min-width: map_get($grid-breakpoints, xl)) { @content; }
+  }
+
+  @else if $class == xxl {
+    @media (min-width: map_get($grid-breakpoints, xxl)) { @content; }
+  }
+
+  @else {
+    @warn "breakpoint mixin supports: xs, sm, md, lg, xl, xxl";
+  }
+}
+
+@mixin font-size($size) {
+
+  $xs: $body-font-size/ $body-font-scale;
+  $sm: $body-font-size;
+  $md: $sm * $body-font-scale;
+  $lg: $md * $body-font-scale;
+  $xl: $lg * $body-font-scale * 1.4;
+ $xxl: $xl * $body-font-scale;
+
+
+  @if $size == xs {
+    font-size: $xs;
+  }
+
+  @else if $size == sm {
+    font-size: $sm;
+  }
+
+  @else if $size == md {
+    font-size: $md;
+  }
+
+  @else if $size == lg {
+    font-size: $lg;
+  }
+
+  @else if $size == xl {
+    font-size: $xl;
+  }
+
+  @else if $size == xxl {
+    font-size: $xxl;
+  }
+
+  @else {
+    @warn "font-size mixin supports: xs, sm, md, lg, xl, xxl";
+  }
+}
+
+@mixin maintain-aspect-ratio($ratio: 1 1) {
+  @if length($ratio) < 2 or length($ratio) > 2 {
+    @warn "$ratio must be a list with two values.";
+  }
+  $width: 100%;
+  $height: percentage(nth($ratio, 2) / nth($ratio, 1));
+
+  width: $width;
+  height: 0;
+  padding-bottom: $height;
+}
+
+// Functions
+@function cssColor($color) {
+  @return map_get($cssColors, $color);
+}

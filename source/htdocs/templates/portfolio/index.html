@@ -1,0 +1,46 @@
+{% extends "_layout" %}
+
+{% block content %}
+<div class="portfolio">
+
+  {% for block in entry.portfolioItem %}
+    <section class="padding-y-xs-4x wrap project">
+      <div class="row">
+        <div class="col-xs-10 offset-xs-1">
+          <video class="portfolio-item portfolio-video" src="{{ block.videoLink }}" poster=
+            {% for videoPoster in block.videoPoster %}
+              "{{ videoPoster.getUrl('sixteenNine') }}"
+            {% endfor %}
+          ></video>
+        </div>
+      </div>
+      <div class="row padding-y-xs-2x project-description">
+        <div class="col-xs-10 offset-xs-1 col-md-5 offset-md-1 ">
+          {% if block.videoTitle %}
+            <h4>{{ block.videoTitle }}</h4>
+          {% endif %}
+          {% if block.videoCredits %}
+            <div class="credits">{{ block.videoCredits }}</div>
+          {% endif %}
+        </div>
+        <div class="col-xs-10 offset-xs-1 col-md-5 offset-md-0">
+          {% if block.description %}
+            <div>{{ block.description }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+
+</div>
+
+<section class="padding-y-xs-3x wrap">
+  <div class="row">
+    <div class="col-xs-5 offset-xs-1 col-md-5 offset-md-6">
+      <a class="cta font-md" href="/studio/">See our studio</a>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

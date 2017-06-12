@@ -1,0 +1,190 @@
+/*
+  Place your animation classes in here.
+*/
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes width-full {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes nav-full-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 30px;
+  }
+}
+
+.a-fadeIn {
+  animation: fade-in 500ms ease forwards;
+}
+.b-fadeIn {
+  animation: fade-in 2500ms ease forwards;
+}
+
+@keyframes black-to-white {
+  0% {
+    background: black;
+  }
+  100% {
+    background: white;
+  }
+}
+
+.black-to-white {
+  animation: black-to-white 1s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes up-and-in {
+  0% {
+    transform: translateY(24px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+// .up-and-in {
+//   animation: up-and-in .4s ease forwards;
+//   animation-delay: 1.0s;
+// }
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(60px);
+  }
+  20%{
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes wipe {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes animate-max-height {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 3000px;
+  }
+}
+
+@keyframes translate-up-100 {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes from-right {
+  0% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes move-right {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+
+@keyframes from-left {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes underscore {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 36px;
+  }
+}
+
+// @keyframes left-to-right {
+//   0% {
+//     left: -100%;
+//   }
+//
+//   100% {
+//     left: 36px;
+//   }
+// }
+
+// .up-and-in-b {
+//   animation: up-and-in-b 1s ease forwards;
+//   animation-delay: .5s;
+//   video, img {
+//     animation: up-and-in-b 1.5s ease forwards;
+//   }
+// }
+
+@keyframes to-white {
+  0% {
+    background: rgba(white,0);
+  }
+  100% {
+    background: rgba(white,1);
+  }
+}

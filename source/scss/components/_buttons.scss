@@ -1,0 +1,37 @@
+@mixin btn-color($color) {
+  border-color: $color;
+  color: $color;
+  &:hover,
+  &:focus {
+    border-color: mix($color, #ffffff, 75%);
+  }
+}
+
+.btn {
+  display: inline-block;  // <a>
+  text-align: center;     // <a>
+  text-decoration: none;  // <a>
+  cursor: pointer;        // <a>
+  background: transparent;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0.66em 1.38em;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  @include btn-color($color-black);
+}
+
+.btn--primary {
+  @include btn-color($color-primary);
+}
+
+.btn--secondary {
+  @include btn-color($color-secondary);
+}
+
+.btn[disabled] {
+  background: #CCC;
+  color: gray;
+  cursor: default;
+}

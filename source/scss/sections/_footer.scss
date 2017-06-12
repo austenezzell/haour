@@ -1,0 +1,45 @@
+/*
+  Footer styles
+*/
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: $base-spacing * 4 0 0;
+  height: 634px;
+  @include breakpoint(md){
+    padding: $base-spacing * 4 0;
+  }
+
+  .footer-title {
+    position: relative;
+    top: 30px;
+    color: white;
+    mix-blend-mode: difference;
+    @include breakpoint(md){
+      top: 0;
+    }
+  }
+}
+
+// .work-footer {
+//   padding-top: $base-spacing * 20;
+// }
+// a.next {
+//   color: white;
+//   mix-blend-mode: difference;
+//   &:hover {
+//     text-decoration: none;
+//     .h1 {
+//       color: $color-gray;
+//     }
+//   }
+// }
+
+.footer-content {
+  height: 494px;
+
+}

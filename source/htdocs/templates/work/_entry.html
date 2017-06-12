@@ -1,0 +1,211 @@
+{% extends "_layout" %} {% block content %}
+<div class="work-page">
+  <div class="transition"></div>
+  <head>
+    <a href="/" class="h2 site-title">hanour.</a>
+    <a href="#" class="hamburger">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+    </a>
+  </head>
+  <div class="main-content">
+    <section class="video-module wrap padding-x-xs-0 overflow-x-hidden primary-video ">
+      {% if entry.fullBleedVideo %}
+        <div class="row vh-full full-bleed-container">
+          <div class="col-xs-12 offset-xs-0 portfolio-video-container align-middle-xs">
+            <video autoplay class="portfolio-item portfolio-video full-bleed-video" data-src="" src="{{ entry.video }}" poster=""></video>
+          </div>
+        </div>
+      {% else %}
+        <div class="row vh-full">
+          <div class="to-white"></div>
+          <div class="col-xs-12 offset-xs-0 portfolio-video-container align-middle-xs">
+            <video autoplay class="portfolio-item portfolio-video " data-src="" src="{{ entry.video }}" poster=""></video>
+          </div>
+        </div>
+      {% endif %}
+    </section>
+    <section id="case-study" class="work-module wrap lazy-load">
+      <div class="row text-content">
+        <div class=" col-xs-10 offset-xs-1 col-md-3 offset-md-1">
+          <h2>{{ entry.title }}</h2>
+          <h5 class="h4 fixed-underscore">{{ entry.projectType }}</h5>
+          <button class="cpy-clip margin-top-xs-3x" data-clipboard-text="{{ craft.request.url }}">
+            <span class="text">
+              <span class="share">share </span>link <span class="shared">copied</span>
+            </span>
+          </button>
+        </div>
+        <div class="col-xs-10 offset-xs-1 col-md-6 offset-md-1">
+          {{ entry.body }}
+        </div>
+      </div>
+    </section>
+    {% for block in entry.caseStudyModules %}
+      {% if block.type == "rightImage" %}
+        <section class="work-module right-img wrap padding-x-xs-0 overflow-x-hidden lazy-load">
+          <div class="row">
+            <div class="text-content col-xs-10 offset-xs-1 col-md-3 offset-md-1 align-middle-xs padding-top-xs-2x padding-top-md-0">
+                {% if block.moduleHeader %}
+                <h5 class="h4">{{ block.moduleHeader }}</h5>
+                {% endif %}
+                {% if block.moduleBody %}
+                <div>{{ block.moduleBody }}</div>
+                {% endif %}
+            </div>
+            <div class="order-first-xs order-last-md col-xs-10 offset-xs-1 col-md-7 offset-md-1 align-middle-xs">
+              <div class="wipe">
+                {% set image = block.moduleImage.first() %}
+                {% if image %}
+                  <img class="portfolio-item" src="{{ image.getUrl }}" alt="">
+                {% else %}
+                  {% set poster = block.moduleVideoPoster.first('sxiteenNine') %}
+                  {% if poster %}
+                    <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
+                  {% else %}
+                    <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+      {% if block.type == "leftImage" %}
+        <section class="work-module right-img wrap padding-x-xs-0 overflow-x-hidden lazy-load">
+          <div class="row">
+            <div class="text-content col-xs-10 offset-xs-1 col-md-3 offset-md-1 align-middle-xs padding-top-xs-2x padding-top-md-0">
+                {% if block.moduleHeader %}
+                <h5 class="h4">{{ block.moduleHeader }}</h5>
+                {% endif %}
+                {% if block.moduleBody %}
+                <div>{{ block.moduleBody }}</div>
+                {% endif %}
+            </div>
+            <div class="order-first-xs col-xs-10 offset-xs-1 offset-md-0 col-md-7 offset-md-1 align-middle-xs">
+              <div class="wipe">
+                {% set image = block.moduleImage.first() %}
+                {% if image %}
+                  <img class="portfolio-item" src="{{ image.getUrl }}" alt="">
+                {% else %}
+                  {% set poster = block.moduleVideoPoster.first('sxiteenNine') %}
+                  {% if poster %}
+                    <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
+                  {% else %}
+                    <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+      {% if block.type == "textModule" %}
+      <section class="work-module lazy-load">
+        <div class="wrap">
+          <div class="row">
+            <div class="text-only-content col col-xs-10 offset-xs-1 ">
+              {% if block.moduleHeader %}
+                <h4>{{ block.moduleHeader }}</h4>
+              {% endif %}
+              {% if block.moduleBody %}
+              <div class="two-col">
+                {{ block.moduleBody }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </section>
+      {% endif %}
+      {% if block.type == "fullWidthImage" %}
+      <section class="work-module wrap padding-x-xs-0 overflow-x-hidden lazy-load">
+        <div class="row">
+          <div class="col-xs-12 wipe">
+            {% set image = block.moduleImage.first() %}
+            {% if image %}
+              <img class="portfolio-item" src="{{ image.getUrl }}" alt="">
+            {% else %}
+              {% set poster = block.moduleVideoPoster.first('sxiteenNine') %}
+              {% if poster %}
+                <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
+              {% else %}
+                <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      {% endif %}
+      {% if block.type == "centeredImage" %}
+      <section class="work-module wrap padding-x-xs-0 overflow-x-hidden lazy-load">
+        <div class="row">
+          <div class="col-xs-10 offset-xs-1 wipe">
+            {% set image = block.moduleImage.first() %}
+            {% if image %}
+              <img class="portfolio-item" src="{{ image.getUrl }}" alt="">
+            {% else %}
+              {% set poster = block.moduleVideoPoster.first('sxiteenNine') %}
+              {% if poster %}
+                <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
+              {% else %}
+                <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      {% endif %}
+      {% if block.type == "centeredText" %}
+      <section class="work-module wrap padding-x-xs-0 overflow-x-hidden lazy-load">
+        <div class="row">
+          <div class="col-xs-6 offset-xs-3 col-md-4 offset-md-4 text-only-content">
+            {% if block.moduleHeader %}
+              <h4>{{ block.moduleHeader }}</h4>
+            {% endif %}
+            {% if block.moduleCenteredText %}
+              {{ block.moduleCenteredText }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      {% endif %}
+    {% endfor %}
+    {% if entry.credits %}
+      <section class="work-module wrap padding-x-xs-0 overflow-x-hidden lazy-load">
+        <div class="row text-only-content">
+          <div class=" col-xs-10 offset-xs-1 padding-bottom-xs-2x">
+            <h5 class="h4 fixed-underscore">credits</h5>
+          </div>
+          <div class="col-xs-10 offset-xs-1 col-md-4 offset-md-1 ">
+            <ul class="credits">
+              {% for block in entry.credits %}
+                {% if block.moduleLink %}
+                  <li class="h4 margin-bottom-xs-2x credit">{{ block.moduleTitle }} <span class="name p light-weight"><a href="{{ block.moduleLink }}" target="_blank">{{ block.moduleName }}</a></span></li>
+                  {% else %}
+                  <li class="h4 margin-bottom-xs-2x credit">{{ block.moduleTitle }} <span class="name p light-weight">{{ block.moduleName }}</span></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-xs-10 offset-xs-1 col-md-4 offset-md-1 ">
+            <ul class="credits credits-row-two"></ul>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+    {% set params = craft.entries.section('work').order('postDate asc') %}
+    {% set prevEntry = entry.getPrev(params) %}
+    {% if prevEntry %}
+      <section class="next-project-module wrap padding-x-xs-0 overflow-x-hidden lazy-load">
+        <div class="row text-only-content next-project-link">
+          <div class=" col-xs-10 offset-xs-1 padding-bottom-xs-2x">
+            <a href="{{ prevEntry.url }}">
+              <h5 class="h4 underscore">next</h5>
+              <p class="h1">{{ prevEntry.title }}</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+  {% endblock %}

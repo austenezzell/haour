@@ -1,0 +1,62 @@
+{% extends "_layout" %} {% block content %}
+<div class="home-page">
+  <div class="transition"></div>
+  <head>
+    <a href="/" class="h4 site-title">hanour.</a>
+    <a href="#" class="hamburger">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+    </a>
+  </head>
+
+  <div class="main-content black-to-white">
+    <section class="wrap padding-x-xs-0 overflow-x-hidden">
+      <div class="row vh-full">
+        <div class="col col-xs-10 offset-xs-1 align-bottom-xs site-intro">
+          <p class="up-and-in h2">
+            <a href="/info/">
+              <span class="text-line text-line-2">{{ entry.intro }}</span>
+            </a><br>
+            <a href="/info#press">
+              <span class="text-line text-line-3">{{ entry.featuredPress }}</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="work" id="work">
+      {% for entry in craft.entries.section('work').order('postdate desc').limit(null) %}
+        <section class="left-img text-img-module wrap padding-x-xs-0 overflow-x-hidden lazy-load case-study-link">
+          <div class="row">
+            <div class=" col-xs-10 offset-xs-1 col-md-3 offset-md-1 align-middle-xs text-content ">
+              <div  class="text-block move-left">
+                <a href="{{ entry.url }}">
+                  <h2>{{ entry.title }}</h2>
+                  <h5 class="h4 underscore">{{ entry.projectType }}</h5>
+                  <p>{{ entry.projectSummary }}</p>
+                </a>
+                <a href="{{ entry.url }}" class="mobile-cta h5">view</a>
+              </div>
+            </div>
+            <div class="title-and-thumbnail order-first-xs col-xs-10 offset-xs-1 col-md-7 offset-md-0 align-middle-xs">
+              <div class="case-study-container">
+                <div class="client slide-in">
+                  <h3 class="h1">{{ entry.client }}</h3>
+                </div>
+                <a href="{{ entry.url }}" class="margin-bottom-xs-1x margin-bottom-md-0 wipe">
+                  {% set trailerPoster = entry.trailerPoster.first('sxiteenTen') %}
+                  {% if trailerPoster %}
+                    <video loop muted playsinline class="portfolio-item" data-src="{{ entry.trailer }}" src="#" poster="{{ trailerPoster.getUrl }}"></video>
+                  {% else %}
+                    <video loop muted playsinline class="portfolio-item" data-src="{{ entry.trailer }}" src="#" poster="/img/gradient_ph_16_10.png"></video>
+                  {% endif %}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+
+  {% endblock %}

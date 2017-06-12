@@ -1,0 +1,334 @@
+/*
+  Utility classes
+*/
+
+.overflow-x-hidden {
+  overflow-x: hidden
+}
+// Lists
+.list-reset {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.list-inline {
+  > li { display: inline-block; }
+}
+
+// Margin & Padding
+@mixin box-spacing($value) {
+  $box-sides: (
+  top: top,
+  bottom: bottom,
+  left: left,
+  right: right
+  );
+
+  // $sizes is the number of classes you want to generate
+  // example: setting this to 4 will generate 1x, 2x, 3x, and 4x sizes
+  $sizes: 4;
+
+  // see _variables.scss for breakpoint definitions
+  @each $breakpoint in $breakpoints {
+    @include breakpoint($breakpoint) {
+
+      @for $i from 1 through $sizes {
+        .margin-all-#{$breakpoint}-#{$i}x {
+          margin: $value * $i;
+        }
+
+        .padding-all-#{$breakpoint}-#{$i}x {
+          padding: $value * $i;
+        }
+      }
+
+      @each $side in map_keys($box-sides) {
+        $sides: map-get($box-sides, #{$side});
+
+        .margin-#{$side}-#{$breakpoint}-half {
+          margin-#{$sides}: $value / 2;
+        }
+
+        .padding-#{$side}-#{$breakpoint}-half {
+          padding-#{$sides}: $value / 2;
+        }
+
+        @for $i from 1 through $sizes {
+          .margin-#{$side}-#{$breakpoint}-#{$i}x {
+            margin-#{$sides}: $value * $i;
+          }
+
+          .padding-#{$side}-#{$breakpoint}-#{$i}x {
+            padding-#{$sides}: $value * $i;
+          }
+        }
+
+        .padding-#{$side}-#{$breakpoint}-0 {
+          padding-#{$sides}: 0;
+        }
+
+        .margin-#{$side}-#{$breakpoint}-0 {
+          margin-#{$sides}: 0;
+        }
+
+        .margin-#{$side}-#{$breakpoint}-auto {
+          margin-#{$sides}: auto;
+        }
+      }
+
+      .margin-y-#{$breakpoint}-half {
+        margin-top: $value / 2;
+        margin-bottom: $value / 2;
+      }
+
+      .padding-y-#{$breakpoint}-half {
+        padding-top: $value / 2;
+        padding-bottom: $value / 2;
+      }
+
+      .margin-x-#{$breakpoint}-half {
+        margin-left: $value / 2;
+        margin-right: $value / 2;
+      }
+
+      .padding-x-#{$breakpoint}-half {
+        padding-left: $value / 2;
+        padding-right: $value / 2;
+      }
+
+      .margin-y-#{$breakpoint}-0 {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .padding-y-#{$breakpoint}-0 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .margin-x-#{$breakpoint}-0 {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .padding-x-#{$breakpoint}-0 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @for $i from 1 through $sizes {
+        .margin-y-#{$breakpoint}-#{$i}x {
+          margin-top: $value * $i;
+          margin-bottom: $value * $i;
+        }
+
+        .padding-y-#{$breakpoint}-#{$i}x {
+          padding-top: $value * $i;
+          padding-bottom: $value * $i;
+        }
+
+        .margin-x-#{$breakpoint}-#{$i}x {
+          margin-left: $value * $i;
+          margin-right: $value * $i;
+        }
+
+        .padding-x-#{$breakpoint}-#{$i}x {
+          padding-left: $value * $i;
+          padding-right: $value * $i;
+        }
+      }
+
+      .margin-y-#{$breakpoint}-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .margin-x-#{$breakpoint}-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .margin-all-#{$breakpoint}-auto {
+        margin: auto;
+      }
+
+      .margin-all-#{$breakpoint}-0 {
+        margin: 0;
+      }
+
+      .padding-all-#{$breakpoint}-0 {
+        padding: 0;
+      }
+    }
+  }
+}
+@include box-spacing($base-spacing);
+
+@each $breakpoint in $breakpoints {
+  @include breakpoint($breakpoint) {
+
+    // Floats
+    .float-#{$breakpoint}-left {
+      float: left;
+    }
+
+    .float-#{$breakpoint}-right {
+      float: right;
+    }
+
+    // Display
+    .display-#{$breakpoint}-block {
+      display: block;
+    }
+
+    .display-#{$breakpoint}-inline {
+      display: inline;
+    }
+
+    .display-#{$breakpoint}-inlineBlock {
+      display: inline-block;
+    }
+
+    .display-#{$breakpoint}-hide {
+      display: none;
+    }
+
+    // Text
+    .text-#{$breakpoint}-left {
+      text-align: left;
+    }
+
+    .text-#{$breakpoint}-right {
+      text-align: right;
+    }
+
+    .text-#{$breakpoint}-center {
+      text-align: center;
+    }
+
+    .text-#{$breakpoint}-hide {
+      text-indent: -1000%;
+    }
+
+    .text-#{$breakpoint}-nowrap {
+      white-space: nowrap;
+    }
+  }
+}
+
+// Font weight
+.font-bold {
+  font-weight: bold;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-italic {
+  font-weight: italic;
+}
+
+// Border
+.border {
+  border: 1px solid #eee;
+}
+
+.border-top {
+  border-top: 1px solid #eee;
+}
+
+.border-right {
+  border-right: 1px solid #eee;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #eee;
+}
+
+.border-left {
+  border-left: 1px solid #eee;
+}
+
+// Position
+.pos-absolute {
+  position: absolute;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.pos-fixed {
+  position: fixed;
+}
+
+// Text and background colors
+@each $color, $hex in $cssColors {
+  .color-#{$color} {
+    color: $hex;
+  }
+
+  .bg-#{$color} {
+    background-color: $hex;
+  }
+}
+
+.full-height {
+  height: 100%;
+}
+// Viewport Height
+.vh-full {
+  height: 100vh;
+}
+
+.vh-half {
+  height: 50vh;
+}
+
+.vh-third {
+  height: (100 / 3) + vh;
+}
+
+// Full-bleed image
+.img-block {
+  width: 100%;
+  display: block;
+}
+
+// Clearfix
+.clearfix {
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+// Hide visually
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.showgrid {
+  .row {
+    background-color: rgba($color-secondary, 0.05);
+  }
+  [class*="col-"] {
+    background-color: rgba($color-secondary, 0.2);
+  }
+  [class*="col-"] + [class*="col-"]:nth-child(even) {
+    background-color: rgba($color-secondary, 0.1);
+  }
+}

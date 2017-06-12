@@ -1,0 +1,30 @@
+.form__control,
+.form__select {
+  display: block;
+  transition: border 0.2s ease-out;
+  border: 1px solid $color-black;
+  border-radius: 3px;
+  padding: 0.75em;
+  margin-bottom: $base-spacing;
+}
+
+.form__select {
+  padding-right: 2rem;
+}
+
+.form__radio,
+.form__checkbox {
+  display: block;
+  position: relative;
+  padding-left: 2em;
+  line-height: 1;
+  margin: 0.5em 0;
+}
+
+.form__radio > input,
+.form__checkbox > input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  margin-left: -2em;
+}

@@ -1,0 +1,133 @@
+/*
+  Nav styles
+*/
+
+.hidden-nav {
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  li {
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all, .4s;
+  }
+  a.hamburger-site-title {
+    position: absolute;
+    padding: 13px;
+    bottom: 64px;
+    left: 8%;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.hidden-nav, .footer-nav {
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: right;
+      a {
+        color: black;
+        position: relative;
+        &:hover {
+          text-decoration: none;
+          // color: $color-gray;
+        }
+        &:before {
+          position: absolute;
+          content: '';
+          // width: 56px;
+          width: 0;
+          height: 4px;
+          left: -72px;
+          top: 50%;
+          margin-top: 1px;
+          background: black;
+        }
+      }
+    }
+  }
+}
+
+.footer-nav {
+  ul li a {
+    color: black;
+    // mix-blend-mode: difference;
+    &:before {
+      background: black;
+    }
+  }
+}
+
+.social-nav {
+  margin-top: 32px;
+  line-height: 1.4;
+}
+
+.activeNav {
+  .hidden-nav {
+    // display: block;
+    opacity: 1;
+    visibility: visible;
+    // background: $gray-gradient;
+    // transition: background 3s;
+    li {
+      transform: translate3d(0, 0px, 0);
+      opacity: 1;
+    }
+  }
+}
+
+.navOut {
+  .hidden-nav {
+    // display: block;
+    opacity: 1;
+    visibility: visible;
+    // background: $gray-gradient;
+    // transition: background 3s;
+    li {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+  }
+}
+
+.work-page, .home-page {
+  .hidden-nav, .footer-nav {
+    ul li a.nav-work {
+      &:before {
+        width: 56px;
+      }
+    }
+  }
+}
+
+.info-page {
+  .hidden-nav, .footer-nav {
+    ul li a.nav-info {
+      &:before {
+        width: 56px;
+      }
+    }
+  }
+}
+
+.contact-page {
+  .hidden-nav, .footer-nav {
+    ul li a.nav-contact {
+      &:before {
+        width: 56px;
+      }
+    }
+  }
+}
