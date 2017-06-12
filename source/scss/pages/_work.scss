@@ -5,6 +5,9 @@
   #case-study {
     padding-top: $base-spacing * 5;
   }
+  .primary-entry-content {
+    padding-top: 25px;
+  }
   .work-module {
     padding-bottom: $base-spacing * 6;
     @include breakpoint(md){
@@ -102,7 +105,7 @@ ul.credits {
 .full-bleed-container {
   .portfolio-video-container {
     height: 100vh;
-  }  
+  }
 }
 .portfolio-video-container {
   cursor: pointer;
