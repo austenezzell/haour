@@ -165,9 +165,16 @@
     @include breakpoint(sm){
       top: -88px;
     }
+    @include breakpoint(xl){
+      top: -128px;
+    }
     h3 {
       transform: translateY(150px);
-
+      @include font-size(h1);
+      @include breakpoint(xl){
+        transform: translateY(180px);
+        @include font-size(xxl);
+      }
     }
   }
   .text-content {
