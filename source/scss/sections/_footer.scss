@@ -13,33 +13,35 @@ footer {
   @include breakpoint(md){
     padding: $base-spacing * 4 0;
   }
-
+  // .footer-nav {
+  //   top: 40px;
+  //   @include breakpoint(md){
+  //     top: 0px;
+  //   }
+  // }
+  .copyright {
+    top: 30px;
+    @include breakpoint(md){
+      top: 0px;
+    }
+  }
   .footer-title {
     position: relative;
-    top: 30px;
+    top: -4px;
     color: white;
     mix-blend-mode: difference;
+    svg {
+      width: 70px;
+      height: auto;
+      path {
+        fill: white;
+      }
+    }
     @include breakpoint(md){
-      top: 0;
+      top: 23px;
     }
   }
 }
-
-// .work-footer {
-//   padding-top: $base-spacing * 20;
-// }
-// a.next {
-//   color: white;
-//   mix-blend-mode: difference;
-//   &:hover {
-//     text-decoration: none;
-//     .h1 {
-//       color: $color-gray;
-//     }
-//   }
-// }
-
 .footer-content {
   height: 494px;
-
 }

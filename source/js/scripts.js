@@ -4,6 +4,10 @@
 
 var aeApp = aeApp || {};
 
+
+  // force widow back to top
+  window.onbeforeunload = function(){ window.scrollTo(0,0); }
+
   aeApp.hamburgerNav = function(){
       $('.hamburger').click(function(e){
         e.preventDefault();
@@ -86,9 +90,6 @@ var aeApp = aeApp || {};
     var inview;
     var portfolioVideo;
     var portfolioVideoContainer;
-
-    // force widow back to top
-    window.onbeforeunload = function(){ window.scrollTo(0,0); }
 
     if (document.querySelector('.primary-video')) {
       primaryVideo = document.querySelector('.primary-video');

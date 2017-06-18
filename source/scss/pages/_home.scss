@@ -26,9 +26,6 @@
   animation-delay: 1.6s;
 }
 .site-intro{
-  // position: fixed;
-  // top:50%;
-  // margin-top: -60px;
   padding-bottom: $base-spacing * 11;
   position: relative;
   p {
@@ -53,14 +50,8 @@
       }
     }
   }
-  .up-and-in {
-    // transform: translateY(24px);
-  }
   p > a {
     text-decoration: none;
-    // &:hover {
-    //   text-decoration: underline;
-    // }
   }
 }
 
@@ -71,26 +62,7 @@
   animation: from-left .7s forwards;
 }
 
-.case-study-link {
-  // h2 span {
-  //   position: relative;
-  // }
-  // h2 span:before {
-  //   content: '';
-  //   transition: width .4s;
-  //   width: 0%;
-  //   left: 0%;
-  //   height: 2px;
-  //   background: black;
-  //   z-index: -1;
-  //   position: absolute;
-  //   bottom: 2px;
-  // }
-}
 .case-study-link.active-hover {
-  // h2 span:before {
-  //   width: 100%;
-  // }
   .underscore {
     padding-left: 48px;
   }
@@ -118,15 +90,21 @@
 .fixed-underscore {
   position: relative;
   overflow: hidden;
-  padding-left: 48px;
+  padding-left: 28px;
+  @include breakpoint(lg){
+    padding-left: 48px;
+  }
   &:before {
     content: '';
     position: absolute;
-    width: 30px;
+    width: 15px;
     height: 2px;
     background: black;
     left: 0;
     top: 50%;
+    @include breakpoint(lg){
+      width: 30px;
+    }
   }
 }
 
@@ -138,8 +116,12 @@
   h2 {
     margin-bottom: $base-spacing;
     line-height: 1;
+    @include breakpoint(sm){
+      font-size: 40px;
+    }
     @include breakpoint(md){
       margin-bottom: $base-spacing * 1.5;
+      font-size: 49px;
     }
   }
   a {
@@ -159,10 +141,13 @@
   }
   .client {
     position: absolute;
-    top: -38px;
+    top: -60px;
     z-index: 9999;
     overflow: hidden;
     @include breakpoint(sm){
+      top: -68px;
+    }
+    @include breakpoint(md){
       top: -88px;
     }
     @include breakpoint(xl){
@@ -170,7 +155,13 @@
     }
     h3 {
       transform: translateY(150px);
-      @include font-size(h1);
+      font-size: 70px;
+      @include breakpoint(sm){
+        font-size: 80px;
+      }
+      @include breakpoint(md){
+        @include font-size(xl);
+      }
       @include breakpoint(xl){
         transform: translateY(180px);
         @include font-size(xxl);
@@ -179,11 +170,8 @@
   }
   .text-content {
     position: relative;
-    // opacity: 0;
   }
 }
-
-
 
 .left-img .client {
   left: 13px;
@@ -198,5 +186,4 @@
   @include breakpoint(md){
     left: 48px;
   }
-
 }

@@ -1,35 +1,8 @@
 
-    <div class="hidden-nav wrap">
-      <nav>
-        <div class="row vh-full">
-          <div class="col-xs-10 offset-xs-1 align-middle-xs">
-            <div class="primary-nav">
-              {% include '_inc/_primary-nav-items' %}
-            </div>
-            <div class="social-nav">
-              {% include '_inc/_social-nav-items' %}
-            </div>
-          </div>
-          <a href="/" class="hamburger-site-title h4">hanour.</a>
-        </div>
-      </nav>
-    </div>
-  </div>
-
-
-  <footer>
-    <div class="wrap full-height footer-nav">
-      <div class="row full-height">
-        <div class="section-bg"></div>
-        <div class="col-xs-10 offset-xs-1">
-          <div class="row footer-content">
-            <div class="col-xs-12 col-md-4 align-bottom-xs">
-              <a href="/" class="h4 margin-all-xs-0 footer-title">hanour.</a>
-            </div>
-            <div class="col-xs-12 col-md-4 align-bottom-xs">
-              <p class="font-xs margin-all-xs-0 text-xs-left text-md-center">© {{ "now"|date("Y") }} Travis Hanour. All Rights Reserved.</p>
-            </div>
-            <div class="order-first-xs order-last-md col-xs-12 col-md-4 align-bottom-xs">
+      <div class="hidden-nav wrap">
+        <nav>
+          <div class="row vh-full">
+            <div class="col-xs-10 offset-xs-1 align-middle-xs">
               <div class="primary-nav">
                 {% include '_inc/_primary-nav-items' %}
               </div>
@@ -37,20 +10,75 @@
                 {% include '_inc/_social-nav-items' %}
               </div>
             </div>
+            <a href="/" class="hamburger-site-title h4">hanour.</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <footer>
+      <div class="wrap full-height footer-nav">
+        <div class="row full-height">
+          <div class="section-bg"></div>
+          <div class="col-xs-10 offset-xs-1">
+            <div class="row footer-content">
+
+              <div class="col-xs-12 align-bottom-xs footer-nav">
+                <div class="primary-nav">
+                  {% include '_inc/_primary-nav-items' %}
+                </div>
+                <div class="social-nav">
+                  {% include '_inc/_social-nav-items' %}
+                </div>
+              </div>
+              <div class="col-xs-12 align-bottom-xs copyright">
+                <a href="/" class="h4 margin-all-xs-0 footer-title">
+                  <svg width="251" height="62" viewBox="0 0 251 62" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>hanour</title>
+                    <defs>
+                      <path id="a" d="M36.384 36.818H.592V.168h35.792z"/>
+                      <path id="c" d="M14.886.053v14.24H.652V.053h14.234z"/>
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                      <path d="M0 0h11.37v30.583c2.19-4.128 6.148-6.403 11.115-6.403 7.834 0 13.476 5.728 13.476 15.925V60.83H24.6V40.86c0-4.043-1.936-6.315-5.982-6.315-4.547 0-7.24 2.526-7.24 7.075v19.21H0V0zm56.336 46.254c-2.86 0-4.126 1.266-4.126 3.285 0 2.02 1.684 3.2 4.885 3.2 4.633 0 6.99-2.02 6.99-5.06v-1.43h-7.75zm1.77-12.72c-4.297 0-6.57 1.852-8.17 3.283l-6.316-6.74c3.37-3.285 7.16-5.897 15.58-5.897 9.182 0 16.17 4.972 16.17 16.26v20.39H64.086l.25-4.97c-2.692 4.128-5.81 5.728-10.608 5.728-6.572 0-12.636-2.95-12.636-11.29 0-7.666 5.81-10.784 14.654-10.784h8.34c-.17-4.128-2.19-5.98-5.98-5.98zm24.25-8.594h11.37l-.253 5.896c2.19-4.297 6.4-6.656 11.367-6.656 7.835 0 13.476 5.728 13.476 15.924V60.83H106.95V40.862c0-4.046-1.938-6.318-5.983-6.318-4.548 0-7.24 2.525-7.24 7.075v19.21H82.354V24.94zm69.558 18.03c0-5.395-3.03-9.017-8.084-9.017s-8.17 3.622-8.17 9.016c0 5.3 3.116 9.01 8.17 9.01s8.084-3.71 8.084-9.02m-27.876 0c0-10.956 8.674-18.79 19.792-18.79 11.117 0 19.708 7.833 19.708 18.786 0 10.867-8.59 18.617-19.708 18.617-11.118 0-19.792-7.75-19.792-18.618" fill="#000"/>
+                      <g transform="translate(168.667 24.77)">
+                        <mask id="b" fill="#fff">
+                          <use xlink:href="#a"/>
+                        </mask>
+                        <path d="M.592 20.895V.168h11.37v19.968c0 4.043 1.937 6.403 5.98 6.403 4.548 0 7.072-2.62 7.072-7.16V.16h11.37v35.9h-11.37l.253-5.897c-2.19 4.297-6.316 6.656-11.286 6.656C6.15 36.82.6 31.08.6 20.89" fill="#000" mask="url(#b)"/>
+                      </g>
+                      <path d="M212.29 24.94h11.37l-.168 6.486c2.61-5.896 6.82-7.246 10.527-7.246 2.35 0 4.12.675 5.55 1.43l-3.62 10.366c-1.43-.675-2.78-1.097-4.38-1.097-5.14 0-7.92 2.36-7.92 10.02v15.93h-11.37V24.94z" fill="#000"/>
+                      <g transform="translate(235.552 47.043)">
+                        <mask id="d" fill="#fff">
+                          <use xlink:href="#c"/>
+                        </mask>
+                        <path d="M.652 7.13c0-4.127 3.286-7.077 7.16-7.077 3.788 0 7.075 2.95 7.075 7.078 0 4.22-3.287 7.17-7.076 7.17-3.87 0-7.15-2.95-7.15-7.16" fill="#000" mask="url(#d)"/>
+                      </g>
+                    </g>
+                  </svg>
+                </a>
+                <p class="font-xs margin-all-xs-0 text-xs-left text-md-center">© {{ "now"|date("Y") }} Travis Hanour. All Rights Reserved.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-16971473-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 
-</div>
-
-
-    <!-- build:js /js/scripts.js -->
-    <!-- bower:js -->
-    <!-- endinject -->
-    <script type="text/javascript" src="/js/scripts.js"></script>
-    <!-- endbuild -->
+  <!-- build:js /js/scripts.js -->
+  <!-- bower:js -->
+  <!-- endinject -->
+  <script type="text/javascript" src="/js/scripts.js"></script>
+  <!-- endbuild -->
 
   </body>
 </html>

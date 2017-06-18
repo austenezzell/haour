@@ -97,7 +97,7 @@ img, video {
   opacity: 1;
   .client {
     pointer-events: none;
-    h3 {
+    h3.h1 {
       animation: translate-up-100 .5s ease forwards;
       animation-delay: 1s;
     }
@@ -124,11 +124,20 @@ img, video {
       opacity: 0;
       animation: fade-up 1.8s ease forwards;
       animation-delay: 1.4s;
+      margin: 10px 0 7px;
+      @include breakpoint(md){
+        margin: 0px 0 30px;
+      }
     }
     p {
       opacity: 0;
       animation: fade-up 1.8s ease forwards;
       animation-delay: 1.6s;
+    }
+    .mobile-cta {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.7s;
     }
     button {
       opacity: 0;
