@@ -37,7 +37,16 @@ img, video {
     z-index: -5;
   }
 }
-
+.back-home {
+  a.hamburger {
+    .line {
+      animation: nav-zero-width .2s ease forwards;
+    }
+  }
+  .main-content .wrap {
+    animation: fade-out .4s ease forwards;
+  }
+}
 .section-bg {
   position: absolute;
   left: 0;
@@ -151,7 +160,7 @@ img, video {
     animation-delay: .4s;
   }
 }
-.work-page, .info-page {
+.work-page, .info-page, .contact-page {
   .transition {
     top: 0;
     left: 0;
@@ -180,11 +189,18 @@ img, video {
     width: 0;
     height: 100%;
     z-index: 9999;
-    transition: width .3s;
   }
 }
 .home-transitioning {
   .transition {
+    animation: width-full .3s ease forwards;
+  }
+}
+.sub-page-transition {
+  .transition {
     width: 100%;
+    background: $gray-gradient;
+    height: 0;
+    animation: height-full .4s ease forwards;
   }
 }

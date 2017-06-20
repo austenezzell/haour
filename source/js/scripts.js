@@ -33,9 +33,34 @@ var aeApp = aeApp || {};
         $('body').addClass('navOut');
         setTimeout(function(){
           window.location.href = href;
+          if ($(e.target).hasClass('nav-info') || $(e.target).hasClass('nav-contact') ) {
+            $('body').addClass('sub-page-transition');
+          }
           $('body').removeClass('activeNav');
         }, 400);
-      })
+      });
+
+      $('.primary-nav a').click(function(e){
+        e.preventDefault();
+        var href = e.target;
+        if ($(e.target).hasClass('nav-info') || $(e.target).hasClass('nav-contact') ) {
+          $('body').addClass('sub-page-transition');
+        }
+        setTimeout(function(){
+          window.location.href = href;
+          $('body').removeClass('activeNav');
+        }, 400);
+      });
+
+      $('.site-title').click(function(e){
+        e.preventDefault();
+        var href = '/';
+        console.log(href);
+        $('body').addClass('back-home');
+        setTimeout(function(){
+          window.location.href = href;
+        }, 400);
+      });
   };
 
   aeApp.scrollThings = function(){

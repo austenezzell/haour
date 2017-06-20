@@ -53,6 +53,7 @@ a.hamburger {
   }
 }
 
+
 .work-page {
   a.hamburger {
     // background: rgba(white,0);
@@ -70,9 +71,6 @@ a.hamburger {
 
 .home-page {
   a.hamburger {
-    // background: rgba(white,0);
-    // animation: to-white .4s ease forwards;
-    // animation-delay: 3s;
     .line {
       width: 0;
       animation: nav-full-width .4s ease forwards;
