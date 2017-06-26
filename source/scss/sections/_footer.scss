@@ -13,32 +13,20 @@ footer {
   @include breakpoint(md){
     padding: $base-spacing * 4 0;
   }
-  // .footer-nav {
-  //   top: 40px;
-  //   @include breakpoint(md){
-  //     top: 0px;
-  //   }
-  // }
-  .copyright {
-    top: 30px;
-    @include breakpoint(md){
-      top: 0px;
-    }
+  .footer-nav-container {
+    height: 400px;
   }
   .footer-title {
     position: relative;
-    top: -4px;
+    top: 3px;
     color: white;
     mix-blend-mode: difference;
     svg {
       width: 70px;
-      height: auto;
+      height: 21px;
       path {
         fill: white;
       }
-    }
-    @include breakpoint(md){
-      top: 23px;
     }
   }
 }

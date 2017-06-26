@@ -25,13 +25,20 @@
   animation: fade-in 1s ease forwards;
   animation-delay: 1.6s;
 }
-.site-intro{
-  padding-bottom: $base-spacing * 11;
+.intro-container {
   position: relative;
+}
+.site-intro{
+  position: absolute;
+  top: 60%;
+  left: -8px;
+  width: 100%;
+  height: 300px;
+  z-index: 99;
   p {
     line-height: 1.3;
   }
-  a span {
+  a {
     position: relative;
     &:before {
       content: '';
@@ -64,26 +71,42 @@
 
 .case-study-link.active-hover {
   .underscore {
-    padding-left: 48px;
+    @include breakpoint(md){
+      padding-left: 48px;
+    }
   }
   .underscore:before {
-    animation: underscore .7s ease forwards;
+    @include breakpoint(md){
+      animation: underscore .7s ease forwards;
+    }
   }
 }
 
 .underscore {
-  padding-left: 0px;
+  padding-left: 28px;
   position: relative;
   overflow: hidden;
-  transition: padding-left .7s ease;
   &:before {
     content: '';
     position: absolute;
-    width: 0;
+    width: 20px;
     height: 2px;
     background: black;
     left: 0;
     top: 50%;
+  }
+  @include breakpoint(md){
+    padding-left: 0px;
+    transition: padding-left .7s ease;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: black;
+      left: 0;
+      top: 50%;
+    }
   }
 }
 

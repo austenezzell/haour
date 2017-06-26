@@ -25,6 +25,11 @@ img, video {
   height: auto;
 }
 
+.black-to-white {
+  animation: black-to-white 1.4s ease forwards;
+  animation-delay: 1s;
+}
+
 .main-content {
   margin-bottom: 634px;
   z-index: 2;

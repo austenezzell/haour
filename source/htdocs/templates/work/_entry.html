@@ -39,14 +39,14 @@
       {% if entry.fullBleedVideo %}
         <div class="row vh-full full-bleed-container">
           <div class="col-xs-12 offset-xs-0 portfolio-video-container align-middle-xs">
-            <video autoplay class="portfolio-item portfolio-video full-bleed-video" data-src="" src="{{ entry.video }}" poster=""></video>
+            <video autoplay playsinline class="portfolio-item portfolio-video full-bleed-video" data-src="" src="{{ entry.video }}" poster=""></video>
           </div>
         </div>
       {% else %}
         <div class="row vh-full">
           <div class="to-white"></div>
           <div class="col-xs-12 offset-xs-0 portfolio-video-container align-middle-xs">
-            <video autoplay class="portfolio-item portfolio-video " data-src="" src="{{ entry.video }}" poster=""></video>
+            <video autoplay playsinline class="portfolio-item portfolio-video " data-src="" src="{{ entry.video }}" poster=""></video>
           </div>
         </div>
       {% endif %}
@@ -56,7 +56,7 @@
         <div class=" col-xs-10 offset-xs-1 col-md-3 offset-md-1">
           <h2>{{ entry.title }}</h2>
           <h5 class="h4 fixed-underscore">{{ entry.projectType }}</h5>
-          <button class="cpy-clip margin-top-xs-3x" data-clipboard-text="{{ craft.request.url }}">
+          <button class="cpy-clip margin-top-md-3x margin-bottom-xs-3x margin-bottom-md-0" data-clipboard-text="{{ craft.request.url }}">
             <span class="text">
               <span class="share">share </span>link <span class="shared">copied</span>
             </span>
@@ -87,9 +87,9 @@
                 {% else %}
                   {% set poster = block.moduleVideoPoster.first('sxiteenNine') %}
                   {% if poster %}
-                    <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
+                    <video loop muted playsinline class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
                   {% else %}
-                    <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
+                    <video loop muted playsinline class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
                   {% endif %}
                 {% endif %}
               </div>
@@ -116,9 +116,9 @@
                 {% else %}
                   {% set poster = block.moduleVideoPoster.first('sxiteenNine') %}
                   {% if poster %}
-                    <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
+                    <video loop muted playsinline class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
                   {% else %}
-                    <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
+                    <video loop muted playsinline class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
                   {% endif %}
                 {% endif %}
               </div>
@@ -154,9 +154,9 @@
             {% else %}
               {% set poster = block.moduleVideoPoster.first('sxiteenNine') %}
               {% if poster %}
-                <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
+                <video loop muted playsinline class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
               {% else %}
-                <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
+                <video loop muted playsinline class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
               {% endif %}
             {% endif %}
           </div>
@@ -173,9 +173,9 @@
             {% else %}
               {% set poster = block.moduleVideoPoster.first('sxiteenNine') %}
               {% if poster %}
-                <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
+                <video loop muted playsinline class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="{{ poster.getUrl }}"></video>
               {% else %}
-                <video loop muted class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
+                <video loop muted playsinline class="portfolio-item portfolio-video" data-src="{{ block.moduleVideo }}" src="#" poster="/img/gradient.png"></video>
               {% endif %}
             {% endif %}
           </div>

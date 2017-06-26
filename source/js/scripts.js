@@ -134,12 +134,16 @@ var aeApp = aeApp || {};
     var portfolioVideoControls = function(){
       portfolioVideo = document.querySelector('.portfolio-video');
       portfolioVideoContainer = document.querySelector('.portfolio-video-container');
+      if (!(portfolioVideo.paused)) {
+        portfolioVideo.parentNode.classList.add('play');
+      }
       portfolioVideoContainer.addEventListener('click', function(){
         if (!(portfolioVideo.paused || portfolioVideo.ended)) {
             portfolioVideo.pause();
             portfolioVideo.parentNode.classList.add('paused');
         } else {
           portfolioVideo.play();
+          portfolioVideo.parentNode.classList.remove('play');
           portfolioVideo.parentNode.classList.remove('paused');
           portfolioVideo.parentNode.classList.remove('ended');
         }
@@ -303,7 +307,6 @@ var aeApp = aeApp || {};
       pageTransition(e, $('body'), 'home-transitioning');
     });
 
-
     if (document.querySelector('#work')) {
       $('#work a').hover(function(e){
         $(this).closest('.case-study-link').addClass('active-hover');
@@ -331,10 +334,10 @@ var aeApp = aeApp || {};
       $('.cpy-clip').addClass('copied');
     });
 
-    // clipboard.on('error', function(e) {
-    //     console.error('Action:', e.action);
-    //     console.error('Trigger:', e.trigger);
-    // });
-
+    window.onpageshow = function(event) {
+      if (event.persisted) {
+        window.location.reload()
+      }
+    };
 
   }(window.jQuery, window, document));

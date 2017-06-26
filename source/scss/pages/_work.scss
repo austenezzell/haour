@@ -41,10 +41,14 @@
     &:hover {
       text-decoration: none;
       .underscore {
-        padding-left: 48px;
+        @include breakpoint(md){
+          padding-left: 48px;
+        }
       }
       .underscore:before {
-        animation: underscore .7s ease forwards;
+        @include breakpoint(md){
+          animation: underscore .7s ease forwards;
+        }
       }
     }
   }
@@ -125,12 +129,6 @@ ul.credits {
       background: white;
       text-align: center;
       padding: 14px;
-      @include breakpoint(sm){
-          // height: 94px;
-          // width: 240px;
-          // margin-left: -120px;
-          // margin-top: -47px;
-      }
     }
   }
   &.ended {
@@ -148,12 +146,23 @@ ul.credits {
       background: white;
       text-align: center;
       padding: 14px;
-      @include breakpoint(sm){
-        // height: 94px;
-        // width: 240px;
-        // margin-left: -120px;
-        // margin-top: -47px;
-      }
+    }
+  }
+  &.play {
+    &:after {
+      content:'play';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -70px;
+      margin-top: -32px;
+      height: 64px;
+      width: 140px;
+      z-index: 10;
+      @extend .p;
+      background: white;
+      text-align: center;
+      padding: 14px;
     }
   }
 }
@@ -171,26 +180,20 @@ button {
   &.cpy-clip {
     padding: 0;
     position: relative;
-    .share-icon svg {
-      height: 40px;
-      width: auto;
-      position: relative;
-      top: 7px;
-      padding-right: 15px;
-    }
     .text {
       position: relative;
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0px;
-        z-index: -1;
-        height: 2px;
-        background: #000;
-        width: 0;
-        transition: width .4s;
-      }
+      text-decoration: underline;
+      // &:before {
+      //   content: '';
+      //   position: absolute;
+      //   left: 0;
+      //   bottom: 0px;
+      //   z-index: -1;
+      //   height: 2px;
+      //   background: #000;
+      //   width: 0;
+      //   transition: width .4s;
+      // }
       .shared {
         display: none;
       }
