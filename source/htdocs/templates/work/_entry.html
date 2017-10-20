@@ -39,14 +39,14 @@
       {% if entry.fullBleedVideo %}
         <div class="row vh-full full-bleed-container">
           <div class="col-xs-12 offset-xs-0 portfolio-video-container align-middle-xs">
-            <video autoplay playsinline class="portfolio-item portfolio-video full-bleed-video" data-src="" src="{{ entry.video }}" poster=""></video>
+            <video playsinline class="portfolio-item portfolio-video full-bleed-video" data-src="" src="{{ entry.video }}" poster=""></video>
           </div>
         </div>
       {% else %}
         <div class="row vh-full">
           <div class="to-white"></div>
           <div class="col-xs-12 offset-xs-0 portfolio-video-container align-middle-xs">
-            <video autoplay playsinline class="portfolio-item portfolio-video " data-src="" src="{{ entry.video }}" poster=""></video>
+            <video playsinline class="portfolio-item portfolio-video " data-src="" src="{{ entry.video }}" poster=""></video>
           </div>
         </div>
       {% endif %}
@@ -54,7 +54,7 @@
     <section id="case-study" class="work-module wrap lazy-load">
       <div class="row text-content">
         <div class=" col-xs-10 offset-xs-1 col-md-3 offset-md-1">
-          <h2>{{ entry.title }}</h2>
+          <h2>{{ entry.client }} - {{ entry.title }}</h2>
           <h5 class="h4 fixed-underscore">{{ entry.projectType }}</h5>
           <button class="cpy-clip margin-top-md-3x margin-bottom-xs-3x margin-bottom-md-0" data-clipboard-text="{{ craft.request.url }}">
             <span class="text">
