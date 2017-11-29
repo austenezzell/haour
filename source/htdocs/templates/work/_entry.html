@@ -61,6 +61,15 @@
               <span class="share">share </span>link <span class="shared">copied</span>
             </span>
           </button>
+          {% if entry.externalLinks %}
+
+            <ul class="external-links">
+              {% for link in entry.externalLinks %}
+                <li><a target="_blank" class="p" href="{{ link.externalLinkUrl }}">{{ link.externalLinkName }}</a></li>
+              {% endfor %}
+            </ul>
+
+          {% endif %}
         </div>
         <div class="col-xs-10 offset-xs-1 col-md-6 offset-md-1 primary-entry-content">
           {{ entry.body }}

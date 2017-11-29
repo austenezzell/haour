@@ -46,23 +46,13 @@
             <h4>{{ block.contactTitle }}</h4>
             <div>{{ block.contactLine }}</div>
           </div>
-
           {% endfor %}
-
           {% if contact.email %}
           <div class="contact-group">
             <h4>Direct</h4>
             <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
           </div>
           {% endif %}
-          <!-- <ul>
-            <li class="h4 margin-bottom-xs-2x">commercial (global)</li>
-            {% for block in contact.commercial %}
-              <li class="h2 margin-bottom-xs-0x light-weight">{{ block.lineItem }}</li>
-            {% endfor %}
-            <li class="h4 margin-bottom-xs-2x margin-top-xs-4x">direct</li>
-            <li class="h2 light-weight"><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
-          </ul> -->
         </div>
       </div>
     </section>
