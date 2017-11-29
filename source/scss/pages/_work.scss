@@ -47,6 +47,9 @@ ul.external-links {
   a {
     text-decoration: underline;
     color: $color-gray;
+    &:hover {
+      color: black;
+    }
   }
 }
 .next-project-module {

@@ -163,6 +163,11 @@ video {
       animation: fade-up 1.8s ease forwards;
       animation-delay: 1.7s;
     }
+    .external-links {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.8s;
+    }
   }
   .text-only-content {
     opacity: 0;
