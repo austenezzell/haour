@@ -123,9 +123,45 @@ aeApp.onload = function() {
   var inview;
   var portfolioVideo;
   var portfolioVideoContainer;
+  var fullScreenBtn;
+  var fullScreen = false;
 
   if (document.querySelector('.primary-video')) {
     primaryVideo = document.querySelector('.primary-video');
+    fullScreenBtn = document.querySelector('.fullscreen-btn');
+
+      fullScreenBtn.addEventListener('click', function() {
+        if (fullScreen) {
+          fullScreenBtn.classList.remove('close-fullscreen');
+          function exitFullscreen() {
+            if(document.exitFullscreen) {
+              document.exitFullscreen();
+            } else if(document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+            } else if(document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            }
+          }
+          exitFullscreen();
+          fullScreen = false;
+        } else {
+          fullScreenBtn.classList.add('close-fullscreen');
+          if (document.body.requestFullscreen) {
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            document.body.requestFullscreen();
+          } else if (document.body.mozRequestFullScreen) {
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            document.body.mozRequestFullScreen();
+          } else if (document.body.webkitRequestFullscreen) {
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            document.body.webkitRequestFullscreen();
+          }
+          fullScreen = true;
+        }
+      });
+
+
+
     inview = new Waypoint.Inview({
       element: primaryVideo,
       enter: function() {
