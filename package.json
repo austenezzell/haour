@@ -5,11 +5,11 @@
   "main": "gulpfile.js",
   "devDependencies": {
     "autoprefixer": "^6.3.1",
-    "browser-sync": "^2.11.1",
-    "css-mqpacker": "^4.0.0",
+    "browser-sync": "^2.24.7",
+    "css-mqpacker": "^3.0.0",
     "del": "^2.2.0",
     "event-stream": "^3.3.2",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.0",
     "gulp-file-include": "^0.13.7",
@@ -38,6 +38,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ansi-styles": "^3.2.1",
+    "arrify": "^1.0.1",
+    "bower": "^1.8.4",
     "clipboard": "^1.7.1",
     "waypoints": "^4.0.1"
   }

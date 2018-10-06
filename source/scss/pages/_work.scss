@@ -20,6 +20,7 @@
   .primary-video {
     z-index: 9;
     position: relative;
+    background: black;
     video {
       opacity: 0;
       animation: fade-in 1.1s ease forwards;
@@ -46,7 +47,6 @@
     z-index: 99999;
     right: 30px;
     bottom: 30px;
-    background: white;
     transition: all .4s;
     &:hover {
       width: 40px;
@@ -163,15 +163,6 @@ ul.external-links {
   background: #000;
   height: 100vh;
   .full-bleed-video {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // min-width: 100%;
-    // min-height: 100%;
-    // width: auto;
-    // height: auto;
-    // transform: translateX(-50%) translateY(-50%);
-
     position: absolute;
     top: 0;
     height: 100vh;

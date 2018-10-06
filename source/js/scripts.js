@@ -62,7 +62,6 @@ aeApp.hamburgerNav = function() {
   $('.site-title').click(function(e) {
     e.preventDefault();
     var href = '/';
-    console.log(href);
     $('body').addClass('back-home');
     setTimeout(function() {
       window.location.href = href;
@@ -125,40 +124,53 @@ aeApp.onload = function() {
   var portfolioVideoContainer;
   var fullScreenBtn;
   var fullScreen = false;
+  var fullBleedVideo;
 
   if (document.querySelector('.primary-video')) {
     primaryVideo = document.querySelector('.primary-video');
     fullScreenBtn = document.querySelector('.fullscreen-btn');
 
-      fullScreenBtn.addEventListener('click', function() {
-        if (fullScreen) {
-          fullScreenBtn.classList.remove('close-fullscreen');
-          function exitFullscreen() {
-            if(document.exitFullscreen) {
-              document.exitFullscreen();
-            } else if(document.mozCancelFullScreen) {
-              document.mozCancelFullScreen();
-            } else if(document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-            }
-          }
-          exitFullscreen();
-          fullScreen = false;
-        } else {
-          fullScreenBtn.classList.add('close-fullscreen');
-          if (document.body.requestFullscreen) {
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
-            document.body.requestFullscreen();
-          } else if (document.body.mozRequestFullScreen) {
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
-            document.body.mozRequestFullScreen();
-          } else if (document.body.webkitRequestFullscreen) {
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
-            document.body.webkitRequestFullscreen();
-          }
-          fullScreen = true;
+
+
+    if (document.querySelector('.vh-full').classList.contains('full-bleed-container')) {
+      fullBleedVideo = true;
+    }
+
+    fullScreenBtn.addEventListener('click', function() {
+      if (fullScreen) {
+        if (fullBleedVideo) {
+          document.querySelector('.vh-full').classList.add('full-bleed-container');
         }
-      });
+        fullScreenBtn.classList.remove('close-fullscreen');
+        function exitFullscreen() {
+          if(document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if(document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if(document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+        }
+        exitFullscreen();
+        fullScreen = false;
+      } else {
+        if (fullBleedVideo) {
+          document.querySelector('.vh-full').classList.remove('full-bleed-container');
+        }
+        fullScreenBtn.classList.add('close-fullscreen');
+        if (document.body.requestFullscreen) {
+          document.body.scrollTop = document.documentElement.scrollTop = 0;
+          document.body.requestFullscreen();
+        } else if (document.body.mozRequestFullScreen) {
+          document.body.scrollTop = document.documentElement.scrollTop = 0;
+          document.body.mozRequestFullScreen();
+        } else if (document.body.webkitRequestFullscreen) {
+          document.body.scrollTop = document.documentElement.scrollTop = 0;
+          document.body.webkitRequestFullscreen();
+        }
+        fullScreen = true;
+      }
+    });
 
 
 
